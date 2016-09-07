@@ -27,7 +27,6 @@
 </section>
 
 <footer id="footer">
-    
     <tiles:insertAttribute name="myfooter" />
 </footer>
 </body>
