@@ -1,1 +1,1 @@
-<h2>Welcome to the Tiles test project!</h2>
+<h1>Welcome to the Tiles test project!</h1>
