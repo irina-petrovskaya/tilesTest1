@@ -21,7 +21,8 @@ import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 @ComponentScan(basePackages = "com.mytests.springmvc.tiles.tilesTest1.controllers")
 public class MyWebConfig extends WebMvcConfigurerAdapter {
 
-    private static final String TILES_DEFINITIONS = "/WEB-INF/views/**/tiles**.xml";
+    private static final String[] TILES_DEFINITIONS1 = new String[]{"/WEB-INF/views/tiles/tiles1.xml", "/WEB-INF/views/tiles/tiles2.xml", "/WEB-INF/views/tiles/tiles3.xml"};
+  private static final String TILES_DEFINITIONS = "/WEB-INF/views/**/tiles*.xml";
 
     /**
      * Configure ResourceHandlers
@@ -38,12 +39,14 @@ public class MyWebConfig extends WebMvcConfigurerAdapter {
     @Bean
     public TilesConfigurer tilesConfigurer(){
         TilesConfigurer tilesConfigurer = new TilesConfigurer();
-          //tilesConfigurer.setDefinitions(new String[] {"/WEB-INF/views/tiles/tiles1.xml", "/WEB-INF/views/tiles/tiles2.xml", "/WEB-INF/views/tiles/tiles3.xml"});   // doesn't work
-        //tilesConfigurer.setDefinitions(TILES_DEFINITIONS); // doesn't work
-        // tilesConfigurer.setDefinitions("/WEB-INF/views/tiles/tiles1.xml", "/WEB-INF/views/tiles/tiles2.xml", "/WEB-INF/views/tiles/tiles3.xml"); // works
-        tilesConfigurer.setDefinitions("/WEB-INF/views/**/tiles**.xml"); // works
-        /*
-        // works:
+        //tilesConfigurer.setDefinitions(new String[] {"/WEB-INF/views/tiles/tiles1.xml", "/WEB-INF/views/tiles/tiles2.xml", "/WEB-INF/views/tiles/tiles3.xml"});   // doesn't work
+        //tilesConfigurer.setDefinitions(new String("/WEB-INF/views/tiles/common.xml"));   // doesn't work
+        //tilesConfigurer.setDefinitions("/WEB-INF/views/tiles/common.xml");   // works
+        //tilesConfigurer.setDefinitions(TILES_DEFINITIONS); // works
+        //tilesConfigurer.setDefinitions(TILES_DEFINITIONS1); // doesn't work
+        tilesConfigurer.setDefinitions("/WEB-INF/views/tiles/tiles1.xml", "/WEB-INF/views/tiles/tiles2.xml", "/WEB-INF/views/tiles/tiles3.xml"); // works
+       // tilesConfigurer.setDefinitions("/WEB-INF/views/**/tiles**.xml"); // works
+        /*// works but should not:
         tilesConfigurer.setDefinitions("/WEB-INF/views/tiles/tiles1.xml");
         tilesConfigurer.setDefinitions("/WEB-INF/views/tiles/tiles2.xml");
         tilesConfigurer.setDefinitions("/WEB-INF/views/tiles/tiles3.xml");*/

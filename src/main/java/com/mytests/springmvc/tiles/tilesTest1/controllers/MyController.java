@@ -11,18 +11,18 @@ import java.util.Date;
 @RequestMapping("/")
 public class MyController {
  
-    @RequestMapping(value = { "/"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/"}, method = RequestMethod.GET)
     public String homePage(ModelMap model) {
         return "home";
     }
  
-    @RequestMapping(value = { "/page1"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/page1"}, method = RequestMethod.GET)
     public String productsPage(ModelMap model) {
         model.addAttribute("today", new Date());
         return "page1";
     }
  
-    @RequestMapping(value = { "/page2"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/page2"}, method = RequestMethod.GET)
     public String contactUsPage(ModelMap model) {
         model.addAttribute("page2Attr","have a good day!");
         return "page2";

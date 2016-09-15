@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <!--  all definitions in one file -->
+    <!-- Base Definition -->
+    <definition name="base-definition"
+                template="/WEB-INF/views/tiles/layouts/defaultLayout.jsp">
+        <put-attribute name="mytitle" value="" />
+        <put-attribute name="myheader" value="/WEB-INF/views/tiles/template/headerTemplate.jsp" />
+        <put-attribute name="mymenu" value="/WEB-INF/views/tiles/template/menuTemplate.jsp" />
+        <put-attribute name="mybody" value="" />
+        <put-attribute name="myfooter" value="/WEB-INF/views/tiles/template/footerTemplate.jsp" />
+    </definition>
+    <!-- Home Page -->
+    <definition name="home" extends="base-definition">
+        <put-attribute name="mytitle" value="Welcome" />
+        <put-attribute name="mybody" value="/WEB-INF/views/pages/home.jsp" />
+    </definition>
+    <!-- Product Page -->
+    <definition name="page1" extends="base-definition">
+        <put-attribute name="mytitle" value="Products" />
+        <put-attribute name="mybody" value="/WEB-INF/views/pages/page1.jsp" />
+    </definition>
+
+    <!-- Contact-us Page -->
+    <definition name="page2" extends="base-definition">
+        <put-attribute name="mytitle" value="Contact Us" />
+        <put-attribute name="mybody" value="/WEB-INF/views/pages/page2.jsp" />
+    </definition>
+
+
+</tiles-definitions>
